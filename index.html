@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffccf9;
+            padding: 50px;
+            transition: background 0.5s ease-in-out;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            color: #ff66b2;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background: #ff66b2;
+            color: white;
+        }
+        .no {
+            background: #ccc;
+            color: black;
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ff66b2;
+        }
+        .gif {
+            width: 200px;
+            margin-top: 20px;
+        }
+        .intro-container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            display: inline-block;
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        .start-btn {
+            background: #ff66b2;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="intro-container" id="intro">
+        <h1>Herro Aisha</h1>
+        <p>The reasons why I love you:</p>
+        <p>I love how goofy you are. I love the way you smile, because every time I see you smile, it makes me smile, and it warms my heart. I absolutely love how caring you are to me. I love how Absolutely Beautiful you are, because yes, you are the prettiest girl in the world. I have so many more reasons that could fill a book but let me get to the point.</p>
+        <button class="start-btn" onclick="startProposal()">Click to continue</button>
+    </div>
+    <div class="container hidden" id="proposal">
+        <h1>Will you be my girlfriend? 💖</h1>
+        <button class="btn yes" onclick="showLove()">Yes</button>
+        <button class="btn no" onmouseover="moveNoButton()">No</button>
+        <div id="result" class="hidden">
+            <p>I knew you would pick yes, I Love you ma! 💕</p>
+            <img class="gif" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnphdWNydm1ha2JuZGMzb29lYzlvM250dzZtc2oycGp0M2UxZnMzayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/q5aS9Pew1xVz6pjQRf/giphy.gif" alt="Cute Gif">
+        </div>
+    </div>
+    <script>
+        function startProposal() {
+            document.getElementById('intro').classList.add('hidden');
+            document.getElementById('proposal').classList.remove('hidden');
+        }
+        function showLove() {
+            document.getElementById('result').classList.remove('hidden');
+        }
+        function moveNoButton() {
+            const noBtn = document.querySelector('.no');
+            noBtn.style.top = Math.random() * window.innerHeight + 'px';
+            noBtn.style.left = Math.random() * window.innerWidth + 'px';
+        }
+    </script>
+</body>
+</html>
+
